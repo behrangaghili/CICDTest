@@ -1,0 +1,11 @@
+name: Mirror to GitLab
+on: [push, workflow_dispatch]
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Mirror the Github repository to GitLab
+      uses: wearerequired/git-mirror-action@v1
+      with:
+        source-repo: "https://${{github.com/behrangaghili/CICDTest}}"
+        destination-repo: "https://oauth2:${{glpat-EzSSiQdE4aHaepn1VQC5}}@gitlab.com/b.aghilinasab/ci.git"
